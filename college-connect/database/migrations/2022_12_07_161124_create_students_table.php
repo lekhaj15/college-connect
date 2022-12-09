@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('student_email');
             $table->string('student_phone');
             $table->string('student_password');
+            $table->string('student_dob');
+
             $table->string('role')->default('student');
 
             $table->foreign('grade_id')

@@ -25,7 +25,7 @@ class Section extends Model
         return $this->getTable();
     }
 
-    public function sectionInformation(): HasOne
+    public function gradeInformation(): HasOne
     {
         return $this->hasOne(Grade::class, 'id', 'grade_id');
     }

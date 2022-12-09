@@ -13,7 +13,7 @@ class Staff extends Model
     //    protected $table = '';
 
     protected $fillable = [
-        'id','staff_id','first_name','last_name','staff_email',
+        'id','staff_id','first_name','last_name','staff_email','staff_dob',
         'staff_phone','staff_password','subject_id','role','created_at',
     ];
 

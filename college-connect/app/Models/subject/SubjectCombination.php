@@ -4,6 +4,8 @@ namespace App\Models\subject;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class SubjectCombination extends Model
 {
@@ -18,5 +20,11 @@ class SubjectCombination extends Model
     {
         return $this->getTable();
     }
+
+    public function subjectInformation(): HasMany
+    {
+        return $this->hasMany(Subject::class, 'id', 'subject_id');
+    }
+
 
 }

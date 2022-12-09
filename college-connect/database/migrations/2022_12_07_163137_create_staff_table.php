@@ -20,9 +20,11 @@ return new class extends Migration
             $table->unsignedBigInteger('subject_id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('student_email');
-            $table->string('student_phone');
-            $table->string('student_password');
+            $table->string('staff_email');
+            $table->string('staff_phone');
+            $table->string('staff_password');
+            $table->string('staff_dob');
+
             $table->string('role')->default('staff');
 
             $table->foreign('subject_id')
