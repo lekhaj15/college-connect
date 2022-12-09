@@ -102,7 +102,7 @@ class SectionController extends Controller
     public function deleteSection(Request $request,int $id): JsonResponse
     {
 
-        $subcategory= Section::where('id', '=', $id)
+        $section= Section::where('id', '=', $id)
 
             ->delete();
 
