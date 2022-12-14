@@ -6,8 +6,13 @@ use App\Models\student\Student;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class guardian extends Model
+
+
+
+class guardian extends Authenticatable implements JWTSubject
 {
     use HasFactory;
     //    protected $table = '';
@@ -26,7 +31,7 @@ class guardian extends Model
         return $this->getTable();
     }
 
-    public function subjectInformation(): HasOne
+    public function studentInformation(): HasOne
     {
         return $this->hasOne(Student::class, 'student_id', 'student_id');
     }

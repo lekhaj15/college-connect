@@ -7,8 +7,11 @@ use App\Models\subject\Subject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Student extends Model
+
+class Student extends Authenticatable implements JWTSubject
 {
     use HasFactory;
     use HasFactory;

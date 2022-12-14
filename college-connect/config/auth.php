@@ -40,6 +40,29 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'jwt',
+            'provider' => 'admin',
+            'hash' => false,
+        ],
+        'student' => [
+            'driver' => 'jwt',
+            'provider' => 'students',
+            'hash' => false,
+        ],
+
+        'staff' => [
+            'driver' => 'jwt',
+            'provider' => 'staffs',
+            'hash' => false,
+            ],
+        'guardian' => [
+            'driver' => 'jwt',
+            'provider' => 'guardians',
+            'hash' => false,
+        ],
+
+
     ],
 
     /*
@@ -63,6 +86,24 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' =>\App\Models\admin\Admin::class,
+        ],
+
+        'students' => [
+            'driver' => 'eloquent',
+            'model' =>\App\Models\student\Student::class,
+
+        ],
+        'staffs' => [
+            'driver' => 'eloquent',
+            'model' =>\App\Models\staff\Staff::class,
+        ],
+        'guardians' => [
+            'driver' => 'eloquent',
+            'model' =>\App\Models\guardian\guardian::class,
         ],
 
         // 'users' => [
